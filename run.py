@@ -97,7 +97,7 @@ def update_record(session, student_id, record_id, start_time, end_time, running_
 
     # 随机生成数据
     mileage = random.randint(2000, 3000)  # 2000-3000之间的随机数
-    pace = random.randint(300, 400)  # 300-400之间的随机数
+    pace = int(running_time/mileage*1000)  # 根据里程和跑步时间计算配速
     step_count = int(mileage * 1.1)  # 步数大约是里程的1.1倍
 
     # 更新记录数据
