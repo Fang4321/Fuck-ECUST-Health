@@ -1,5 +1,6 @@
 import requests
 import random
+import time
 from datetime import datetime, timedelta
 
 # API端点
@@ -112,7 +113,7 @@ def update_record(session, student_id, record_id, start_time, end_time, running_
         "step_count": step_count,
         "student_id": str(student_id)
     }
-
+    time.sleep(running_time)
     # 发送更新请求
     update_response = session.post(update_url, json=update_data)
 
